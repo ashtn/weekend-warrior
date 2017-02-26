@@ -6,9 +6,9 @@ require_relative 'alouette'
 Minitest::Reporters.use!
 
 describe Alouette do
-  describe "lines_for_verse" do
+  describe "verse_lines" do
     it "returns an array of strings" do
-      lines = Alouette.lines_for_verse(3)
+      lines = Alouette.verse_lines(3)
 
       lines.must_be_kind_of Array
 
@@ -19,7 +19,7 @@ describe Alouette do
 
     it "generates the correct line for the first verse" do
       skip
-      Alouette.lines_for_verse(0).must_equal ['Et la tête!']
+      Alouette.verse_lines(0).must_equal ['Et la tête!']
     end
 
     it "generates the correct lines for the third verse" do
@@ -29,7 +29,7 @@ describe Alouette do
         "Et le bec!",
         "Et la tête!"
       ]
-      Alouette.lines_for_verse(2).must_equal expected_lines
+      Alouette.verse_lines(2).must_equal expected_lines
     end
   end
 
