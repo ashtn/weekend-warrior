@@ -39,6 +39,6 @@ class Alouette
 
 end
 
- n = Alouette.new
-#
-puts n.verse(7)
+#  n = Alouette.new
+# #
+# puts n.verse(7)
