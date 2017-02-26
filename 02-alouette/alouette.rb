@@ -4,19 +4,19 @@ class Alouette
 
   def  initialize
 
-    @lyrics = [ "Et le dos!", "Et la queue!", "Et les pattes!", "Et les ailes!", "Et le cou!", "Et les yeux!", "Et le bec!", "Et la tête!" ]
+    @@lyrics = [ "Et le dos!", "Et la queue!", "Et les pattes!", "Et les ailes!", "Et le cou!", "Et les yeux!", "Et le bec!", "Et la tête!" ]
 
   end
 
-  def verse_lines(index)
+  def self.verse_lines(index)
 
-    return @lyrics[index..7]
+    return @@lyrics[index..7]
 
   end
 
-  def verse(index)
+  def self.verse(index)
 
-    lyric = @lyrics[index].chomp("!")
+    lyric = @@lyrics[index].chomp("!")
     lyric = lyric.split(' ')[1..-1].join(' ')
 
 
