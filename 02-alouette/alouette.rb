@@ -8,7 +8,7 @@ class Alouette
 
   end
 
-  def lines_for_verse(index)
+  def verse_lines(index)
 
     return @lyrics[index..7]
 
@@ -23,7 +23,7 @@ class Alouette
 
     puts "Je te plumerai #{lyric}. \n" * 2
 
-    verse = lines_for_verse(index)
+    verse = verse_lines(index)
 
     verse.each do | line |
       puts "#{line}\n" * 2
