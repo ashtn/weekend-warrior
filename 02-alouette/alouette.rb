@@ -2,16 +2,13 @@ class Alouette
 
   attr_accessor :lyrics
 
-  @@lyrics = [ "Et le dos!", "Et la queue!", "Et les pattes!", "Et les ailes!", "Et le cou!", "Et les yeux!", "Et le bec!", "Et la tête!" ]
 
-  # def  initialize
-  #
-  #
-  # end
+  @@lines = ["Et la tête!", "Et le bec!", "Et les yeux!", "Et le cou!", "Et les ailes!", "Et les pattes!", "Et la queue!", "Et le dos!" ]
+
 
   def self.verse_lines(index)
 
-    @@lyrics[index..7]
+    @@lines[0..index].reverse
 
   end
 
@@ -20,20 +17,20 @@ class Alouette
     lyric = verse_lines(index)[0].split(' ')[1..-1].join(' ').chomp("!")
 
     verse = []
-    beginning = "Je te plumerai #{lyric}."
-    finish = ["Alouette!", "Alouette!", "A-a-a-ah"]
 
     verse_lines(index).each  do |line|
       verse << "#{line}"
       verse << "#{line}"
     end
 
-    verse.unshift(begining)
-    verse.unshift(begining) #* 2
-
-    finish.each do |line|
+    verse.unshift("Je te plumerai #{lyric}.")
+    verse.unshift("Je te plumerai #{lyric}.") #* 2
+    # verse_array.unshift("Je te plumerai #{lyric}.")
+    ["Alouette!", "Alouette!", "A-a-a-ah"].each do |line|
       verse << "#{line}"
     end
+
+
 
     return verse.join("\n")
 
