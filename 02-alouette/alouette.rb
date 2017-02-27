@@ -8,19 +8,15 @@ class Alouette
 
   def self.verse_lines(index)
 
-    @@lines[0..index].reverse
-
+    return @@lines[0..index].reverse
   end
 
-  # def self.refrain
-  #   "\n\nAlouette, gentille alouette,\nAlouette, je te plumerai.\n\n"
-  # end
 
   def self.verse(index)
 
-    lyric = verse_lines(index)[0].split(' ')[1..-1].join(' ').chomp("!")
-
     verse = []
+
+    lyric = verse_lines(index)[0].split(' ')[1..-1].join(' ').chomp("!")
 
     verse_lines(index).each  do |line|
       verse << "#{line}"
@@ -29,68 +25,30 @@ class Alouette
 
     verse.unshift("Je te plumerai #{lyric}.")
     verse.unshift("Je te plumerai #{lyric}.") #* 2
-    # verse_array.unshift("Je te plumerai #{lyric}.")
+
     ["Alouette!", "Alouette!", "A-a-a-ah"].each do |line|
       verse << "#{line}"
+
     end
 
-
-
     return verse.join("\n")
-
   end
 
+
   def self.sing
+
     refrain = "Alouette, gentille alouette,\nAlouette, je te plumerai."
 
-    song = []
+    song = ""
 
     7.times do |i|
       song << refrain + "\n\n"
       song << verse(i) + "\n\n"
     end
 
-    song << refrain 
-
-
-
+    song << refrain
 
     return song.join
-
   end
 
-
 end
-
-# #puts Alouette.verse(0).class
-# puts Alouette.verse(7)
-# # puts
-# # lines = Alouette.verse(3).split("\n")
-# # puts lines
-# #
-# lines = Alouette.verse(7).split("\n")
-#
-# #If there aren't at least 2 lines, don't continue
-# puts lines.class
-# puts lines.length
-# puts lines
-
-
-#
-# 2.times do |i|
-#   lines[i].start_with?('Je te plumerai')
-# end
-#
-# lines = Alouette.verse(3).split("\n")
-#
-# # If there aren't at least 3 lines, don't continue
-# puts lines.length >  2
-# puts lines.length
-# puts lines[-3] == "Alouette!"
-# puts lines[-3]
-# puts lines[-2] == "Alouette!"
-# puts lines[-2]
-# puts lines[-1] == "A-a-a-ah"
-# puts lines[-1]
-# puts lines
-#print Alouette.sing
