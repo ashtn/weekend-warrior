@@ -12,9 +12,9 @@ class Alouette
 
   end
 
-  def self.refrain
-    "\n\nAlouette, gentille alouette,\nAlouette, je te plumerai.\n\n"
-  end
+  # def self.refrain
+  #   "\n\nAlouette, gentille alouette,\nAlouette, je te plumerai.\n\n"
+  # end
 
   def self.verse(index)
 
@@ -43,29 +43,19 @@ class Alouette
   def self.sing
     refrain = "Alouette, gentille alouette,\nAlouette, je te plumerai."
 
-song = []
+    song = []
 
- 7.times do |i|
-   song << refrain + "\n\n"
-   song << verse(i) + "\n\n"
- end
+    7.times do |i|
+      song << refrain + "\n\n"
+      song << verse(i) + "\n\n"
+    end
 
- song << refrain + "\n\n"
-
-
+    song << refrain 
 
 
 
 
-
-    # song = "#{ refrain }#{ verse(0) }#{ refrain }#{ verse(1) }#{ refrain }#{ verse(2) }  #{ refrain }#{ verse(3) }#{ refrain }#{ verse(4) }#{ refrain }#{ verse(5) }#{ refrain }#{ verse(6) }#{ refrain }#{ verse(7) }#{ refrain }"
-
-    # song = refrain + verse(0) + refrain + verse(1) + refrain + verse(2) + refrain + verse(3) + refrain + verse(4) + refrain + verse(5) + refrain + verse(6) + refrain
-
-        # song = refrain + "\n\n" + verse(0) + "\n\n" + refrain + "\n\n" + verse(1) + "\n\n" + refrain + "\n\n" + verse(2) + "\n\n" + refrain + "\n\n" + verse(3) + "\n\n" + refrain + "\n\n" + verse(4) + "\n\n" + refrain + "\n\n" + verse(5) + "\n\n" + refrain + "\n\n" + verse(6) + "\n\n" + refrain
-
-
-    return song.join("")
+    return song.join
 
   end
 
@@ -103,4 +93,4 @@ end
 # puts lines[-1] == "A-a-a-ah"
 # puts lines[-1]
 # puts lines
-print Alouette.sing
+#print Alouette.sing
