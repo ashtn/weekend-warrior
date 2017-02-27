@@ -26,7 +26,7 @@ class Alouette
     verse.unshift("Je te plumerai #{lyric}.")
     verse.unshift("Je te plumerai #{lyric}.") #* 2
     # verse_array.unshift("Je te plumerai #{lyric}.")
-    ["Alouette!", "Alouette!", "A-a-a-ah"].each do |line|
+    ["Alouette!", "Alouette!", "A-a-a-ah"].reverse.each do |line|
       verse << "#{line}"
     end
 
@@ -36,7 +36,13 @@ class Alouette
 
   end
 
-  def sing
+  def self.sing
+    refrain = "\n\nAlouette, gentille alouette,\nAlouette, je te plumerai.\n\n"
+
+    song = "#{ refrain }#{ verse(0) }#{ refrain }#{ verse(1) }#{ refrain }#{ verse(2) }  #{ refrain }#{ verse(3) }#{ refrain }#{ verse(4) }#{ refrain }#{ verse(5) }#{ refrain }#{ verse(6) }#{ refrain }#{ verse(7) }#{ refrain }"
+
+    return song
+
   end
 
 
@@ -47,13 +53,13 @@ end
 # # puts
 # # lines = Alouette.verse(3).split("\n")
 # # puts lines
+# #
+# lines = Alouette.verse(7).split("\n")
 #
-lines = Alouette.verse(7).split("\n")
-
-#If there aren't at least 2 lines, don't continue
-puts lines.class
-puts lines.length
-puts lines
+# #If there aren't at least 2 lines, don't continue
+# puts lines.class
+# puts lines.length
+# puts lines
 
 
 #
@@ -73,3 +79,4 @@ puts lines
 # puts lines[-1] == "A-a-a-ah"
 # puts lines[-1]
 # puts lines
+print Alouette.sing
