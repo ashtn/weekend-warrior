@@ -12,6 +12,10 @@ class Alouette
 
   end
 
+  def self.refrain
+    "\n\nAlouette, gentille alouette,\nAlouette, je te plumerai.\n\n"
+  end
+
   def self.verse(index)
 
     lyric = verse_lines(index)[0].split(' ')[1..-1].join(' ').chomp("!")
@@ -26,7 +30,7 @@ class Alouette
     verse.unshift("Je te plumerai #{lyric}.")
     verse.unshift("Je te plumerai #{lyric}.") #* 2
     # verse_array.unshift("Je te plumerai #{lyric}.")
-    ["Alouette!", "Alouette!", "A-a-a-ah"].reverse.each do |line|
+    ["Alouette!", "Alouette!", "A-a-a-ah"].each do |line|
       verse << "#{line}"
     end
 
@@ -37,11 +41,31 @@ class Alouette
   end
 
   def self.sing
-    refrain = "\n\nAlouette, gentille alouette,\nAlouette, je te plumerai.\n\n"
+    refrain = "Alouette, gentille alouette,\nAlouette, je te plumerai."
 
-    song = "#{ refrain }#{ verse(0) }#{ refrain }#{ verse(1) }#{ refrain }#{ verse(2) }  #{ refrain }#{ verse(3) }#{ refrain }#{ verse(4) }#{ refrain }#{ verse(5) }#{ refrain }#{ verse(6) }#{ refrain }#{ verse(7) }#{ refrain }"
+song = []
 
-    return song
+ 7.times do |i|
+   song << refrain + "\n\n"
+   song << verse(i) + "\n\n"
+ end
+
+ song << refrain + "\n\n"
+
+
+
+
+
+
+
+    # song = "#{ refrain }#{ verse(0) }#{ refrain }#{ verse(1) }#{ refrain }#{ verse(2) }  #{ refrain }#{ verse(3) }#{ refrain }#{ verse(4) }#{ refrain }#{ verse(5) }#{ refrain }#{ verse(6) }#{ refrain }#{ verse(7) }#{ refrain }"
+
+    # song = refrain + verse(0) + refrain + verse(1) + refrain + verse(2) + refrain + verse(3) + refrain + verse(4) + refrain + verse(5) + refrain + verse(6) + refrain
+
+        # song = refrain + "\n\n" + verse(0) + "\n\n" + refrain + "\n\n" + verse(1) + "\n\n" + refrain + "\n\n" + verse(2) + "\n\n" + refrain + "\n\n" + verse(3) + "\n\n" + refrain + "\n\n" + verse(4) + "\n\n" + refrain + "\n\n" + verse(5) + "\n\n" + refrain + "\n\n" + verse(6) + "\n\n" + refrain
+
+
+    return song.join("")
 
   end
 
